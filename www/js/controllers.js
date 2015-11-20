@@ -20,16 +20,18 @@ app.controller(
                         // the structure of GoogleFit data structures
                         console.log("Data: " + JSON.stringify(data));
                         $scope.gfit_data = JSON.stringify(data);
+                        $scope.$apply()
                     },
                     function(e) {
                         // The error e is returned in case of problems with the query
                         console.log("Error: " + JSON.stringify(e));
                         $scope.gfit_data = JSON.stringify(e);
+                        $scope.$apply()
                     }
                 );
             };
             $scope.callGFit();
-            $scope.callGFit();
+            //$scope.callGFit();
         });
     }
     ]
